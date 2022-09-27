@@ -23,6 +23,7 @@ namespace LatinPisces.Model
             this._name = name;
             this._path = path;
             this._translate = transalate;
+            this._transcription = transcription;
         }
 
     }
