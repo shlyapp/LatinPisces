@@ -6,10 +6,7 @@
         xmlns:local="clr-namespace:LatinPisces"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="750">
-    <Grid>
-        <Button Content="Начать тест" HorizontalAlignment="Center" Margin="0,308,0,0" VerticalAlignment="Top" Height="120" Width="450" FontFamily="Bahnschrift SemiBold" FontSize="50"/>
-        <Button Content="Настройки" HorizontalAlignment="Center" Margin="0,446,0,0" VerticalAlignment="Top" Height="120" Width="450" FontFamily="Bahnschrift SemiBold" FontSize="50"/>
-        <Label Content="Меню" HorizontalAlignment="Center" Margin="0,38,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bahnschrift SemiBold" FontSize="80" Height="160" Width="402"/>
 
-    </Grid>
+    <Frame Name="MainFrame" NavigationUIVisibility="Hidden"/>
+
 </Window>

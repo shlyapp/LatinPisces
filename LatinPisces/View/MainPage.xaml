@@ -1,0 +1,16 @@
+﻿<Page x:Class="LatinPisces.View.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LatinPisces.View"
+      mc:Ignorable="d" 
+      d:Height="700" d:Width="750"
+      Title="MainPage">
+
+    <Grid Background="White">
+        <Button Content="Начать тест" HorizontalAlignment="Center" Margin="0,308,0,0" VerticalAlignment="Top" Height="120" Width="450" FontFamily="Bahnschrift SemiBold" FontSize="50" AutomationProperties.Name="" Click="startTest"/>
+        <Button Content="Настройки" HorizontalAlignment="Center" Margin="0,446,0,0" VerticalAlignment="Top" Height="120" Width="450" FontFamily="Bahnschrift SemiBold" FontSize="50" Click="openSettings"/>
+        <Label Content="Меню" HorizontalAlignment="Center" Margin="0,38,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bahnschrift SemiBold" FontSize="80" Height="160" Width="402"/>
+    </Grid>
+</Page>

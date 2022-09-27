@@ -13,22 +13,26 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using LatinPisces.View;
-
-namespace LatinPisces
+namespace LatinPisces.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для MainPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainPage : Page
     {
-
-        public MainWindow()
+        public MainPage()
         {
             InitializeComponent();
-            this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+        }
 
-            MainFrame.Content = new MainPage();
+        private void startTest(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new TestPage());
+        }
+
+        private void openSettings(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SettingsPage());
         }
     }
 }
