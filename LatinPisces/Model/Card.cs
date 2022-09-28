@@ -1,17 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LatinPisces.Model
 {
+    ///[Table("cards")]
+
     internal class Card
     {
-        private string _name;
-        private string _translate;
-        private string _transcription;
-        private string _path;
+        //[Key]
+
+        private string name;
+        private string translate;
+        private string transcription;
+        private string path;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public string Translate
+        {
+            get { return translate; }
+            set { translate = value; }
+        }
+
+        public string Transcription
+        {
+            get { return transcription; }
+            set { transcription = value; }
+        }
+
+        public string Path
+        {
+            get { return path; }
+            set { path = value; }
+        }
 
         public Card()
         {
@@ -20,10 +50,10 @@ namespace LatinPisces.Model
 
         public Card(string name, string path, string transalate, string transcription)
         {
-            this._name = name;
-            this._path = path;
-            this._translate = transalate;
-            this._transcription = transcription;
+            this.name = name;
+            this.path = path;
+            this.translate = transalate;
+            this.transcription = transcription;
         }
 
     }
