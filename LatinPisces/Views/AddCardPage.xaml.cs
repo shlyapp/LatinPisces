@@ -47,6 +47,8 @@ namespace LatinPisces.Views
 
                 MessageBox.Show("Новая карточка успешна добавлена!");
                 NavigationService.GoBack();
+
+                card.getWrongOption();
             }
             else
             {

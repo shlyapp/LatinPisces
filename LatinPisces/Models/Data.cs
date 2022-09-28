@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace LatinPisces.Models
 
         private static List<Card> _cards { get; set; }
 
+        private static List<String> _defaultDictionary { get; set; }
+
         static Data()
         {
             db = new ApplicationContext();
@@ -21,6 +24,8 @@ namespace LatinPisces.Models
             db.Cards.Load();
 
             _cards = db.Cards.Local.ToList();
+
+            _defaultDictionary = new List<string>();
         }
 
         public static void AddCard(Card card)
@@ -40,6 +45,23 @@ namespace LatinPisces.Models
         public static List<Card> GetCards()
         {
             return _cards;
+        }
+
+        public static void setDefaultDictionary(string path)
+        {
+            string wrongOption;
+            StreamReader streamReader = new StreamReader(path);
+            while ((wrongOption = streamReader.ReadLine()) != null)
+            {
+
+                _defaultDictionary.Add(wrongOption);
+            }
+            streamReader.Close();
+        }
+
+        public static List<String> GetDefaultDictionary()
+        {
+            return _defaultDictionary;
         }
 
     }

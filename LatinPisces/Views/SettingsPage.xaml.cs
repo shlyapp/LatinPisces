@@ -1,4 +1,6 @@
-﻿using LatinPisces.Views;
+﻿using LatinPisces.Models;
+using LatinPisces.Views;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +41,17 @@ namespace LatinPisces.View
         private void ShowCards(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new CardsPage());
+        }
+
+        private void AddDefaultDictionary(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Текстовый файл (*.txt)|*.txt";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                Data.setDefaultDictionary(openFileDialog.FileName);
+            }
         }
     }
 }

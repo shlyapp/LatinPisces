@@ -23,7 +23,8 @@
                FontFamily="Bahnschrift SemiBold" 
                FontSize="60"/>
         <Button Content="Добавить карточку" 
-                Margin="0,0,0,0" 
+                Margin="0, -50, 0, 0" 
+                HorizontalAlignment="Center"
                 Height="96"
                 Width="500"
                 Click="AddCard" 
@@ -31,10 +32,20 @@
                 FontSize="50" 
                 />
         <Button Content="Список карточек" 
-            Margin="0,240,0,0" 
+            Margin="0,200,0,0" 
+            HorizontalAlignment="Center"
             Height="96"
             Width="500"
             Click="ShowCards" 
+            FontFamily="Bahnschrift SemiBold" 
+            FontSize="50" 
+                />
+        <Button Content="Добавить словарь" 
+            Margin="0,-300,0,0"
+            HorizontalAlignment="Center"
+            Height="96"
+            Width="500"
+            Click="AddDefaultDictionary" 
             FontFamily="Bahnschrift SemiBold" 
             FontSize="50" 
                 />

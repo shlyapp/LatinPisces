@@ -43,6 +43,10 @@ namespace LatinPisces.Models
 
         public List<String> getWrongOption()
         {
+            if (_wrongOptions == null)
+            {
+                return Data.GetDefaultDictionary();
+            }
             return _wrongOptions;
         }
 
