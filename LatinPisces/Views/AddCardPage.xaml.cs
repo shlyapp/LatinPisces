@@ -33,23 +33,6 @@ namespace LatinPisces.Views
 
         private void AddCard(object sender, RoutedEventArgs e)
         {
-            //try
-            //{
-            //    MessageBox.Show($"{NameTextBlock.Text}, {TranslationTextBlock.Text}, {_path}, {TranscriptionTextBlock.Text}");
-            //    Card card = new Card(NameTextBlock.Text, TranslationTextBlock.Text, _path, TranscriptionTextBlock.Text);
-
-            //    Data.AddCard(card);
-
-            //    MessageBox.Show("Новая карточка успешна добавлена!");
-            //    NavigationService.GoBack();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Проверьте правильность заполнения полей.");
-            //    MessageBox.Show($"{NameTextBlock.Text}, {TranslationTextBlock.Text}, {_path}, {TranscriptionTextBlock.Text}");
-            //    NavigationService.GoBack();
-            //}
-
             if (NameTextBlock.Text != null && TranscriptionTextBlock.Text != null && _path != null && TranscriptionTextBlock.Text != null)
             {
                 Card card = new Card(NameTextBlock.Text, TranslationTextBlock.Text, _path, TranscriptionTextBlock.Text);
