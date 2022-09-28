@@ -26,17 +26,6 @@ namespace LatinPisces.View
         public MainPage()
         {
             InitializeComponent();
-
-
-            ApplicationContext db = new ApplicationContext();
-
-            db.Database.EnsureCreated();
-            db.Cards.Load();
-
-            Card card = new Card("0", "0", "0", "0");
-            db.Cards.Add(card);
-            db.SaveChanges();
-
         }
 
         private void startTest(object sender, RoutedEventArgs e)

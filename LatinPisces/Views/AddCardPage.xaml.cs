@@ -1,4 +1,5 @@
-﻿using LatinPisces.Views;
+﻿using LatinPisces.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,26 +15,28 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LatinPisces.View
+namespace LatinPisces.Views
 {
     /// <summary>
-    /// Логика взаимодействия для SettingsPage.xaml
+    /// Логика взаимодействия для AddCardPage.xaml
     /// </summary>
-    public partial class SettingsPage : Page
+    public partial class AddCardPage : Page
     {
-        public SettingsPage()
+        public AddCardPage()
         {
             InitializeComponent();
         }
 
-        private void Save(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new MainPage());
-        }
-
         private void AddCard(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddCardPage());
+            ApplicationContext db = new ApplicationContext();
+
+            db.Database.EnsureCreated();
+            db.Cards.Load();
+
+            Card card = new Card(NameTextBlock.Text, TranslationTextBlock.Text, "null", TranscriptionTextBlock.Text);
+            db.Cards.Add(card);
+            db.SaveChanges();
         }
     }
 }

@@ -9,7 +9,26 @@
       Title="SettingsPage">
 
     <Grid Background="White">
-        <Button Content="Сохранить" Margin="450,550,0,0" Height="96" Width="272" Click="Save" FontFamily="Bahnschrift SemiBold" FontSize="50" RenderTransformOrigin="1.171,4.212"/>
-        <Label Content="Настройки" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontFamily="Bahnschrift SemiBold" FontSize="60"/>
+        <Button Content="Сохранить" 
+                Margin="450,550,0,0" 
+                Height="96" Width="272" 
+                Click="Save" 
+                FontFamily="Bahnschrift SemiBold" 
+                FontSize="50" 
+                />
+        <Label Content="Настройки" 
+               Margin="0,10,0,0" 
+               VerticalAlignment="Top" 
+               HorizontalContentAlignment="Center" 
+               FontFamily="Bahnschrift SemiBold" 
+               FontSize="60"/>
+        <Button Content="Добавить карточку" 
+                Margin="0,0,0,0" 
+                Height="96"
+                Width="500"
+                Click="AddCard" 
+                FontFamily="Bahnschrift SemiBold" 
+                FontSize="50" 
+                />
     </Grid>
 </Page>
