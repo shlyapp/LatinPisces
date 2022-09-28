@@ -25,6 +25,7 @@ namespace LatinPisces.Views
     {
 
         private string _path;
+        private string _pathToDict;
 
         public AddCardPage()
         {
@@ -35,7 +36,12 @@ namespace LatinPisces.Views
         {
             if (NameTextBlock.Text != null && TranscriptionTextBlock.Text != null && _path != null && TranscriptionTextBlock.Text != null)
             {
+
                 Card card = new Card(NameTextBlock.Text, TranslationTextBlock.Text, _path, TranscriptionTextBlock.Text);
+                if (_pathToDict != null)
+                {
+                    card.AddDictionary(_pathToDict);
+                }
 
                 Data.AddCard(card);
 
@@ -58,6 +64,17 @@ namespace LatinPisces.Views
             if (openFileDialog.ShowDialog() == true)
             {
                 _path = openFileDialog.FileName;
+            }
+        }
+
+        private void AddDictionaryFile(object sender, MouseButtonEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Текстовый файл (*.txt)|*.txt";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                _pathToDict = openFileDialog.FileName;
             }
         }
     }

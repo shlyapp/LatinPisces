@@ -63,6 +63,16 @@ namespace LatinPisces.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        internal static byte[] add {
+            get {
+                object obj = ResourceManager.GetObject("add", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         internal static byte[] open {
             get {
                 object obj = ResourceManager.GetObject("open", resourceCulture);

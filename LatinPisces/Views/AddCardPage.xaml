@@ -71,12 +71,24 @@
                  Height="46"
                  Name="TranslationTextBlock"/>
         <Image HorizontalAlignment="Left"
-               Height="82"
-               Margin="610,334,0,0"
+               Height="51"
+               Margin="620,350,0,0"
                VerticalAlignment="Top"
-               Width="88"
+               Width="51"
                Source="/Resources/open.png"
                MouseDown="OpenFileDialog"/>
+        <Label Content="Добавить словарь"
+            Margin="30,410,140,0"
+            FontFamily="Bahnschrift SemiBold"
+            FontSize="50"
+            VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left"
+            Height="51"
+            Margin="620,420,0,0"
+            VerticalAlignment="Top"
+            Width="51"
+            Source="/Resources/add.png"
+            MouseDown="AddDictionaryFile" RenderTransformOrigin="0.392,1.011"/>
 
     </Grid>
 </Page>
