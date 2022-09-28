@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using LatinPisces.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace LatinPisces.View
 {
     /// <summary>
@@ -23,6 +26,17 @@ namespace LatinPisces.View
         public MainPage()
         {
             InitializeComponent();
+
+
+            ApplicationContext db = new ApplicationContext();
+
+            db.Database.EnsureCreated();
+            db.Cards.Load();
+
+            Card card = new Card("2", "2", "2", "2");
+            db.Cards.Add(card);
+            db.SaveChanges();
+
         }
 
         private void startTest(object sender, RoutedEventArgs e)
