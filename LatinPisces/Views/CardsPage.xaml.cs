@@ -15,6 +15,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using LatinPisces.Models;
+
+
 namespace LatinPisces.Views
 {
     /// <summary>
@@ -22,31 +25,20 @@ namespace LatinPisces.Views
     /// </summary>
     public partial class CardsPage : Page
     {
-        ApplicationContext db;
-        List<Card> cards;
         public CardsPage()
         {
             InitializeComponent();
 
-            db = new ApplicationContext();
-
-            db.Database.EnsureCreated();
-            db.Cards.Load();
-
-             cards = db.Cards.Local.ToList();
-            CardList.ItemsSource = cards;
-            
-            //CardsData.DataContext = db.Cards.Local.ToObservableCollection();
+            CardList.ItemsSource = Data.GetCards();      
         }
 
         private void DeleteCard(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
             Card card = button.DataContext as Card;
-            db.Cards.Local.Remove(card);
-            cards.Remove(card);
+
+            Data.RemoveCard(card);
             CardList.Items.Refresh();
-            db.SaveChanges();
         }
 
         private void GoBack(object sender, RoutedEventArgs e)
