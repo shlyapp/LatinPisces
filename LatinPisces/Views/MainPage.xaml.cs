@@ -33,7 +33,7 @@ namespace LatinPisces.View
             db.Database.EnsureCreated();
             db.Cards.Load();
 
-            Card card = new Card("2", "2", "2", "2");
+            Card card = new Card("0", "0", "0", "0");
             db.Cards.Add(card);
             db.SaveChanges();
 
