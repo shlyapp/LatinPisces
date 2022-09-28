@@ -1,5 +1,6 @@
 ﻿using LatinPisces.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,9 @@ namespace LatinPisces.Views
     /// </summary>
     public partial class AddCardPage : Page
     {
+
+        private string _path;
+
         public AddCardPage()
         {
             InitializeComponent();
@@ -29,14 +33,36 @@ namespace LatinPisces.Views
 
         private void AddCard(object sender, RoutedEventArgs e)
         {
-            ApplicationContext db = new ApplicationContext();
+            try
+            {
+                ApplicationContext db = new ApplicationContext();
 
-            db.Database.EnsureCreated();
-            db.Cards.Load();
+                db.Database.EnsureCreated();
+                db.Cards.Load();
 
-            Card card = new Card(NameTextBlock.Text, TranslationTextBlock.Text, "null", TranscriptionTextBlock.Text);
-            db.Cards.Add(card);
-            db.SaveChanges();
+                Card card = new Card(NameTextBlock.Text, TranslationTextBlock.Text, _path, TranscriptionTextBlock.Text);
+                db.Cards.Add(card);
+                db.SaveChanges();
+
+                MessageBox.Show("Новая карточка успешна добавлена!");
+                NavigationService.GoBack();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Проверьте правильность заполнения полей.");
+            }
+            
+        }
+
+        private void OpenFileDialog(object sender, MouseButtonEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Изображения (*.png)|*.png";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                _path = openFileDialog.FileName;
+            }
         }
     }
 }
