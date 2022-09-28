@@ -30,5 +30,13 @@
                 FontFamily="Bahnschrift SemiBold" 
                 FontSize="50" 
                 />
+        <Button Content="Список карточек" 
+            Margin="0,240,0,0" 
+            Height="96"
+            Width="500"
+            Click="ShowCards" 
+            FontFamily="Bahnschrift SemiBold" 
+            FontSize="50" 
+                />
     </Grid>
 </Page>

@@ -35,5 +35,10 @@ namespace LatinPisces.View
         {
             NavigationService.Navigate(new AddCardPage());
         }
+
+        private void ShowCards(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CardsPage());
+        }
     }
 }
