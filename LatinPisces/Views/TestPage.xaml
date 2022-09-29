@@ -8,7 +8,39 @@
       d:DesignHeight="700" d:DesignWidth="750"
       Title="TestPage">
 
-    <Grid Background="White">
-        
+    <Grid Background="White" Name="grid">
+        <Image
+               Height="auto"
+               Width="auto"
+               VerticalAlignment="Center"
+               Margin="137,0,137,300"
+               Name = "CardImage"
+               />
+        <Button HorizontalAlignment="Center"
+                Margin="0,0,0,-80"
+                Height="49"
+                Width="686"
+                Click="GiveAnswer"/>
+        <Button HorizontalAlignment="Center"
+                Margin="0,0,0,-200"
+                Height="49"
+                Width="686"
+                Click="GiveAnswer"/>
+        <Button HorizontalAlignment="Center"
+                Margin="0,0,0,-320"
+                Height="49"
+                Width="686"
+                Click="GiveAnswer"/>
+        <Button HorizontalAlignment="Center"
+                Margin="0,0,0,-440"
+                Height="49"
+                Width="686"
+                Click="GiveAnswer"/>
+        <Button HorizontalAlignment="Center"
+                Margin="0,0,0,-560"
+                Height="49"
+                Width="686"
+                Click="GiveAnswer"/>
+
     </Grid>
 </Page>
