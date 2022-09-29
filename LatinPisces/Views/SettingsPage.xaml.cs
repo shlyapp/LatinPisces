@@ -50,7 +50,7 @@ namespace LatinPisces.View
 
             if (openFileDialog.ShowDialog() == true)
             {
-                Data.setDefaultDictionary(openFileDialog.FileName);
+                Card.AddDefaultDictionary(openFileDialog.FileName);
             }
         }
     }

@@ -15,8 +15,11 @@ namespace LatinPisces.Models
         public string Translation { get; set; }
         public string Path { get; set; }
         public string Transcription { get; set; }
+        public string PathToDictionary { get; set; }
 
-        private List<String> _wrongOptions;
+        //private static List<String> _defaultDictionary = new List<string>();
+        //private List<String> _specialDictionary;
+        private static string _pathToDefaultDictionry;
 
         public Card(string name, string translation, string path, string transcription)
         {
@@ -24,30 +27,55 @@ namespace LatinPisces.Models
             this.Translation = translation;
             this.Path = path;
             this.Transcription = transcription;
+
+            PathToDictionary = _pathToDefaultDictionry;
         }
 
-        public void AddDictionary(string path)
+        public static void AddDefaultDictionary(string path)
         {
-            _wrongOptions = new List<String>();
+            _pathToDefaultDictionry = path;
+        }
 
-            string wrongOption;
-            StreamReader streamReader = new StreamReader(path);
-            while ((wrongOption = streamReader.ReadLine()) != null)
-            {
+        //public static void AddDefautlDictionary(string path)
+        //{
+        //    string wrongOption;
+        //    StreamReader streamReader = new StreamReader(path);
+        //    while ((wrongOption = streamReader.ReadLine()) != null)
+        //    {
+
+        //        _defaultDictionary.Add(wrongOption);
+        //    }
+        //    streamReader.Close();
+        //}
+
+        //public void AddDictionary(string path)
+        //{
+        //    _specialDictionary = new List<String>();
+
+        //    string wrongOption;
+        //    StreamReader streamReader = new StreamReader(path);
+        //    while ((wrongOption = streamReader.ReadLine()) != null)
+        //    {
                 
-                _wrongOptions.Add(wrongOption);
-            }
-            streamReader.Close();
+        //        _specialDictionary.Add(wrongOption);
+        //    }
+        //    streamReader.Close();
             
-        }
+        //}
 
-        public List<String> getWrongOption()
+        public List<String> GetWrongAnswers()
         {
-            if (_wrongOptions == null)
+
+            List<String> wrongAnswers = new List<String>();
+            string wrongAnswer;
+
+            StreamReader streamReader = new StreamReader(PathToDictionary);
+            while ((wrongAnswer = streamReader.ReadLine()) != null)
             {
-                return Data.GetDefaultDictionary();
+                wrongAnswers.Add(wrongAnswer);
             }
-            return _wrongOptions;
+            
+            return wrongAnswers;
         }
 
     }

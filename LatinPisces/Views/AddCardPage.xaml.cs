@@ -40,7 +40,7 @@ namespace LatinPisces.Views
                 Card card = new Card(NameTextBlock.Text, TranslationTextBlock.Text, _path, TranscriptionTextBlock.Text);
                 if (_pathToDict != null)
                 {
-                    card.AddDictionary(_pathToDict);
+                    card.PathToDictionary = _pathToDict;
                 }
 
                 Data.AddCard(card);
@@ -48,7 +48,7 @@ namespace LatinPisces.Views
                 MessageBox.Show("Новая карточка успешна добавлена!");
                 NavigationService.GoBack();
 
-                card.getWrongOption();
+                MessageBox.Show(card.GetWrongAnswers().Count.ToString());
             }
             else
             {
