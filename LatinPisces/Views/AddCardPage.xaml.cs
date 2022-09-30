@@ -43,14 +43,22 @@ namespace LatinPisces.Views
                     card.PathToDictionary = _pathToDict;
                 }
 
-                Data.AddCard(card);
+                if (card.PathToDictionary != null)
+                {
+                    Data.AddCard(card);
 
-                MessageBox.Show("Новая карточка успешна добавлена!");
+                    MessageBox.Show("Новая карточка успешна добавлена!");
+                }
+                else
+                {
+                    MessageBox.Show("Нет словаря по умолчанию или специального словаря!");
+                }
             }
             else
             {
                 MessageBox.Show("Проверьте правильность заполнения полей.");
             }
+
             NavigationService.GoBack();
 
         }
@@ -58,7 +66,7 @@ namespace LatinPisces.Views
         private void OpenFileDialog(object sender, MouseButtonEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Изображения (*.png)|*.png";
+            openFileDialog.Filter = "Изображения (*.png, *.jpg)|*.png;*.jpg";
 
             if (openFileDialog.ShowDialog() == true)
             {
