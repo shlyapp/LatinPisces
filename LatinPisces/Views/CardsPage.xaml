@@ -18,21 +18,24 @@
                
         </Label>
         <ListView
-                  Name="CardList"
-            Margin="0, 60, 0, 100">
+            Name="CardList"
+            Margin="0, 60, 0, 100"
+            Width="auto"
+            Height="auto">
             <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
+                <DataTemplate >
+                    <Grid Width="auto" Height="auto">
                         
                             <TextBlock Text="{Binding Id}"
                                    FontSize="40"
-                                       Margin="0, 0, 0, 0"
+                                       HorizontalAlignment="Left"
                                        TextAlignment="Left"
                                    FontFamily = "Bahnschrift SemiBold">
 
                             </TextBlock>
                             <TextBlock Text="{Binding Name}"
-                                   Margin="100, 0, 0, 0"
+                                   HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
                                    FontSize="40"
                                        TextAlignment="Left"
                                    FontFamily = "Bahnschrift SemiBold"
@@ -40,7 +43,14 @@
 
                             </TextBlock>
 
-                        <Button Click="DeleteCard" Content="Удалить" Width="100" Height="70" FontFamily = "Bahnschrift SemiBold" FontSize="20" Margin="600, 0, 0, 0"/>
+                        <Button Click="DeleteCard"
+                                Content="Удалить"
+                                Width="100"
+                                Height="70"
+                                FontFamily = "Bahnschrift SemiBold"
+                                FontSize="20" 
+                                Margin="600, 0, 0, 0"
+                                HorizontalAlignment="Right"/>
                     
                     </Grid>
                 </DataTemplate>

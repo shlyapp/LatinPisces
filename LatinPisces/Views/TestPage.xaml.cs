@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -36,10 +37,17 @@ namespace LatinPisces.View
             RefreshButtons();
         }
 
+        //private void AddTranscriprion(object sender, RoutedEventArgs e)
+        //{
+        //    IEnumerable<Button> collection = grid.Children.OfType<Button>();
+        //    foreach (Button button in collection)
+        //    {
+        //        button.Content = $"{Data.GetCards()[i].Translation} - {Data.GetCards()[i].Transcription}";
+        //    }
+        //}
+
         private void GiveAnswer(object sender, RoutedEventArgs e)
         {
-            
-
             Button button = sender as Button;
 
             if (button.Content == Data.GetCards()[i].Translation)
@@ -54,18 +62,19 @@ namespace LatinPisces.View
             i++;
             if (i == Data.GetCards().Count)
             {
+                MessageBox.Show("Все тесты пройдены!");
                 NavigationService.GoBack();
             }
             else
             {
                 RefreshButtons();
             }
-            
         }
 
         private void RefreshButtons()
         {
             CardImage.Source = BitmapFrame.Create(new Uri(Data.GetCards()[i].Path));
+            QuestionText.Content = Data.GetCards()[i].Name;
 
             List<string> asnwers = Logic.GetRandomAnswers(Data.GetCards()[i]);
             IEnumerable<Button> collection = grid.Children.OfType<Button>();

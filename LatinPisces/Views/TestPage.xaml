@@ -10,37 +10,63 @@
 
     <Grid Background="White" Name="grid">
         <Image
-               Height="auto"
-               Width="auto"
-               VerticalAlignment="Center"
-               Margin="137,0,137,300"
+               Height="290"
+               Width="500"
+               VerticalAlignment="Top"
+               Margin="125,10,125,0"
                Name = "CardImage"
                />
+        
         <Button HorizontalAlignment="Center"
-                Margin="0,0,0,-80"
-                Height="49"
+                VerticalAlignment="Center"
+                Margin="0, 80, 0, 0"
+                Height="49" 
                 Width="686"
+                FontFamily="Bahnschrift SemiBold"
+                FontSize="30"
                 Click="GiveAnswer"/>
         <Button HorizontalAlignment="Center"
-                Margin="0,0,0,-200"
+                Margin="0,200,0,0"
                 Height="49"
                 Width="686"
+                FontFamily="Bahnschrift SemiBold"
+                FontSize="30"
                 Click="GiveAnswer"/>
         <Button HorizontalAlignment="Center"
-                Margin="0,0,0,-320"
+                Margin="0,320,0,0"
                 Height="49"
                 Width="686"
+                FontFamily="Bahnschrift SemiBold"
+                FontSize="30"
+                Click="GiveAnswer"/>
+       <Button HorizontalAlignment="Center"
+                Margin="0,440,0,0"
+                Height="49"
+                Width="686"
+               FontFamily="Bahnschrift SemiBold"
+                FontSize="30"
                 Click="GiveAnswer"/>
         <Button HorizontalAlignment="Center"
-                Margin="0,0,0,-440"
+                Margin="0, 560, 0, 0"
                 Height="49"
                 Width="686"
+                FontFamily="Bahnschrift SemiBold"
+                FontSize="30"
                 Click="GiveAnswer"/>
-        <Button HorizontalAlignment="Center"
-                Margin="0,0,0,-560"
-                Height="49"
-                Width="686"
-                Click="GiveAnswer"/>
+        <Label Name = "QuestionText"
+               FontFamily="Bahnschrift SemiBold"
+               FontSize="40"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Margin="0, 0, 0, 20"/>
+        <CheckBox Content="Показать транскрипцию"
+                  HorizontalAlignment="Center"
+                  Margin="0,0,0,0"
+                  FontFamily="Bahnschrift SemiBold"
+                  FontSize="20"
+                  VerticalAlignment="Bottom"
+
+                    />
 
     </Grid>
 </Page>

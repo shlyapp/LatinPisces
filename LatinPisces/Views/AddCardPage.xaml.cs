@@ -46,15 +46,12 @@ namespace LatinPisces.Views
                 Data.AddCard(card);
 
                 MessageBox.Show("Новая карточка успешна добавлена!");
-                NavigationService.GoBack();
-
-                MessageBox.Show(card.GetWrongAnswers().Count.ToString());
             }
             else
             {
                 MessageBox.Show("Проверьте правильность заполнения полей.");
-                NavigationService.GoBack();
             }
+            NavigationService.GoBack();
 
         }
 
