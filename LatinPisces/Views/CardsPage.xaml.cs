@@ -34,8 +34,9 @@ namespace LatinPisces.Views
 
         private void DeleteCard(object sender, RoutedEventArgs e)
         {
-            Button button = sender as Button;
-            Card card = button.DataContext as Card;
+            //Button button = sender as Button;
+            Image image = sender as Image;
+            Card card = image.DataContext as Card;
 
             Data.RemoveCard(card);
             CardList.Items.Refresh();

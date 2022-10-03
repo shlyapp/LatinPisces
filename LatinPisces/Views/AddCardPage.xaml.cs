@@ -59,6 +59,7 @@ namespace LatinPisces.Views
                 MessageBox.Show("Проверьте правильность заполнения полей.");
             }
 
+
             NavigationService.GoBack();
 
         }

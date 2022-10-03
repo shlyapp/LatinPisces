@@ -24,33 +24,36 @@
             Height="auto">
             <ListView.ItemTemplate>
                 <DataTemplate >
-                    <Grid Width="auto" Height="auto">
+                    <Grid  Width="700" Height="auto">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"> </ColumnDefinition>
+                            <ColumnDefinition Width="*"> </ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
                         
-                            <TextBlock Text="{Binding Id}"
-                                   FontSize="40"
-                                       HorizontalAlignment="Left"
-                                       TextAlignment="Left"
-                                   FontFamily = "Bahnschrift SemiBold">
-
-                            </TextBlock>
-                            <TextBlock Text="{Binding Name}"
+                        
+                        <TextBlock Grid.Column="0"
+                            Text="{Binding Name}"
                                    HorizontalAlignment="Center"
                                        VerticalAlignment="Center"
                                    FontSize="40"
-                                       TextAlignment="Left"
                                    FontFamily = "Bahnschrift SemiBold"
                                    >
 
                             </TextBlock>
 
-                        <Button Click="DeleteCard"
-                                Content="Удалить"
-                                Width="100"
-                                Height="70"
-                                FontFamily = "Bahnschrift SemiBold"
-                                FontSize="20" 
-                                Margin="600, 0, 0, 0"
-                                HorizontalAlignment="Right"/>
+                        <Image Grid.Column="1"
+                            MouseDown="DeleteCard"
+                                Width="50"
+                               Height="50"
+                                Source="/Resources/delete.png"
+                                />
+                        <Image Grid.Column="2"
+                            
+                                Width="50"
+                               Height="50"
+                                Source="/Resources/edit.png"
+                                />
                     
                     </Grid>
                 </DataTemplate>

@@ -73,6 +73,36 @@ namespace LatinPisces.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        internal static byte[] choose {
+            get {
+                object obj = ResourceManager.GetObject("choose", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] delete {
+            get {
+                object obj = ResourceManager.GetObject("delete", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] edit {
+            get {
+                object obj = ResourceManager.GetObject("edit", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         internal static byte[] open {
             get {
                 object obj = ResourceManager.GetObject("open", resourceCulture);
