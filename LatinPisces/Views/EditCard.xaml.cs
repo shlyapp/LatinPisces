@@ -60,6 +60,11 @@ namespace LatinPisces.Views
             }
         }
 
+        private void CanselChange(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
         private void CardChange(object sender, RoutedEventArgs e)
         {
             Data.RemoveCard(_card);

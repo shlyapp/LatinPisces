@@ -60,13 +60,13 @@ namespace LatinPisces.View
         {
             Button button = sender as Button;
 
-            if (button.Content ==_cards[i].Latin)
+            if (button.Content ==_cards[i].Latin || button.Content == _cards[i].Russian)
             {
-                MessageBox.Show($"Верный ответ!\nТранскрипция: {_cards[i].Transcription}");
+                MessageBox.Show($"Верный ответ!\nПеревод: {_cards[i].Russian}\nТранскрипция: {_cards[i].Transcription}");
             }
             else
             {
-                MessageBox.Show($"Неверный ответ!\nПравильно: {_cards[i].Latin}\nТранскрипция: {_cards[i].Transcription}");
+                MessageBox.Show($"Неверный ответ!\nПравильно: {_cards[i].Latin}\nПеревод: {_cards[i].Russian}\nТранскрипция: {_cards[i].Transcription}");
             }
 
             i++;
@@ -83,6 +83,9 @@ namespace LatinPisces.View
 
         private void RefreshButtons()
         {
+            isLatin.IsChecked = true;
+            isRussian.IsChecked = false;
+
             CardImage.Source = BitmapFrame.Create(new Uri(_cards[i].Path));
 
             _wrongAnswers = Logic.GetRandomAnswers(_cards[i]);
