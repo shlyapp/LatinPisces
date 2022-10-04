@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:LatinPisces.View"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="750"
-      Title="TestPage">
+      Title="TestPage" KeyDown="Page_KeyDown">
 
     <Grid Background="White" Name="grid">
         <Image
