@@ -82,7 +82,8 @@
             Margin="30,410,140,0"
             FontFamily="Bahnschrift SemiBold"
             FontSize="50"
-            VerticalAlignment="Top"/>
+            VerticalAlignment="Top"
+            ToolTip="Формат словаря: Latin - Russian"/>
         <Image HorizontalAlignment="Left"
             Height="51"
             Margin="620,420,0,0"

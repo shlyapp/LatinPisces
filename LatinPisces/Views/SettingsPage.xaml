@@ -47,7 +47,8 @@
             Width="500"
             Click="AddDefaultDictionary" 
             FontFamily="Bahnschrift SemiBold" 
-            FontSize="50" 
+            FontSize="50"
+            ToolTip="Формат словаря: Latin - Russian"
                 />
     </Grid>
 </Page>
