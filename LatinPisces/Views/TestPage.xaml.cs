@@ -25,10 +25,15 @@ namespace LatinPisces.View
     {
 
         private int i = 0;
+        private List<Card> _cards;
 
         public TestPage()
         {
             InitializeComponent();
+
+            Random r = new Random();
+            _cards = Data.GetCards().OrderBy(x => r.Next()).ToList();
+
             LoadTest();
         }
 
@@ -50,7 +55,7 @@ namespace LatinPisces.View
         {
             Button button = sender as Button;
 
-            if (button.Content == Data.GetCards()[i].Latin)
+            if (button.Content ==_cards[i].Latin)
             {
                 MessageBox.Show("Верный ответ!");
             }
@@ -60,7 +65,7 @@ namespace LatinPisces.View
             }
 
             i++;
-            if (i == Data.GetCards().Count)
+            if (i == _cards.Count)
             {
                 MessageBox.Show("Все тесты пройдены!");
                 NavigationService.GoBack();
@@ -73,10 +78,10 @@ namespace LatinPisces.View
 
         private void RefreshButtons()
         {
-            CardImage.Source = BitmapFrame.Create(new Uri(Data.GetCards()[i].Path));
-            QuestionText.Content = Data.GetCards()[i].Latin;
+            CardImage.Source = BitmapFrame.Create(new Uri(_cards[i].Path));
+            QuestionText.Content = _cards[i].Latin;
 
-            List<string> asnwers = Logic.GetRandomAnswers(Data.GetCards()[i]);
+            List<string> asnwers = Logic.GetRandomAnswers(_cards[i]);
             IEnumerable<Button> collection = grid.Children.OfType<Button>();
             int j = 0;
             foreach (Button button in collection)
