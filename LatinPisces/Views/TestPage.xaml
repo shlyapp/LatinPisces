@@ -9,69 +9,89 @@
       Title="TestPage">
 
     <Grid Background="White" Name="grid" KeyDown="Page_KeyDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
         <Image
-               Height="334"
-               VerticalAlignment="Top"
-               Margin="99,10,99,0"
+               Height="auto"
+                Width="auto"
+               VerticalAlignment="Center"
+               Margin="20"
                Name = "CardImage" KeyDown="Page_KeyDown"
                />
-
-        <Button HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Margin="0, 80, 0, 0"
-                Height="49" 
+        <Button
+                Grid.Row="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Height="40" 
                 Width="686"
                 FontFamily="Bahnschrift SemiBold"
                 FontSize="30"
                 Click="GiveAnswer"/>
-        <Button HorizontalAlignment="Center"
-                Margin="0,200,0,0"
-                Height="49"
+        <Button 
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Margin="0, 50, 0, 0"
+                Height="40"
                 Width="686"
                 FontFamily="Bahnschrift SemiBold"
                 FontSize="30"
                 Click="GiveAnswer"/>
-        <Button HorizontalAlignment="Center"
-                Margin="0,320,0,0"
-                Height="49"
+        <Button 
+            Grid.Row="1"    
+            HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Margin="0, 100, 0, 0"
+                Height="40"
                 Width="686"
                 FontFamily="Bahnschrift SemiBold"
                 FontSize="30"
                 Click="GiveAnswer"/>
-        <Button HorizontalAlignment="Center"
-                Margin="0,440,0,0"
-                Height="49"
+        <Button
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Margin="0, 150, 0 ,0"
+                Height="40"
                 Width="686"
                FontFamily="Bahnschrift SemiBold"
                 FontSize="30"
                 Click="GiveAnswer"/>
-        <Button HorizontalAlignment="Center"
-                Margin="0, 560, 0, 0"
-                Height="49"
+        <Button
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Margin="0, 200, 0 ,0"
+                Height="40"
                 Width="686"
                 FontFamily="Bahnschrift SemiBold"
                 FontSize="30"
                 Click="GiveAnswer"/>
-        <CheckBox Content="Lat"
-                  Margin="500,630,0,0"
+        <CheckBox 
+            Grid.Row="2"
+                  Content="Lat"
                   Height="20"
                   Width="60"
+            HorizontalAlignment="Center"
+                  Margin="60, 0, 0, 0"
                   FontFamily="Bahnschrift SemiBold"
                   FontSize="20"
                   Name = "isLatin"
                   Click="ChangeLanguage"
-
-
                     />
         <CheckBox Content="Rus"
-                  Margin="650,630,0,0"
+                  Grid.Row="2"
+                  HorizontalAlignment="Center"
+                  Margin="0, 0, 60, 0"
                   Height="20"
                   Width="60"
                   FontFamily="Bahnschrift SemiBold"
                   FontSize="20"
                   Name="isRussian" Click="ChangeLanguage"
                   
-
                     />
 
     </Grid>
