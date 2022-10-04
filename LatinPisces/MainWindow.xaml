@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LatinPisces"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="750">
+        Title="Латинские рыбы" Height="700" Width="750">
 
     <Frame Name="MainFrame" NavigationUIVisibility="Hidden"/>
 

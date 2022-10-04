@@ -5,6 +5,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>fish.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +13,10 @@
     <None Remove="Resources\delete.png" />
     <None Remove="Resources\edit.png" />
     <None Remove="Resources\open.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="fish.ico" />
   </ItemGroup>
 
   <ItemGroup>
