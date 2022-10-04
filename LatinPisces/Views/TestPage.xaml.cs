@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using LatinPisces.Models;
+using LatinPisces.Views;
 
 namespace LatinPisces.View
 {
@@ -60,14 +61,17 @@ namespace LatinPisces.View
         {
             Button button = sender as Button;
 
-            if (button.Content ==_cards[i].Latin || button.Content == _cards[i].Russian)
-            {
-                MessageBox.Show($"Верный ответ!\nПеревод: {_cards[i].Russian}\nТранскрипция: {_cards[i].Transcription}");
-            }
-            else
-            {
-                MessageBox.Show($"Неверный ответ!\nПравильно: {_cards[i].Latin}\nПеревод: {_cards[i].Russian}\nТранскрипция: {_cards[i].Transcription}");
-            }
+            //if (button.Content ==_cards[i].Latin || button.Content == _cards[i].Russian)
+            //{
+            //    MessageBox.Show($"Верный ответ!\nПеревод: {_cards[i].Russian}\nТранскрипция: {_cards[i].Transcription}");
+            //}
+            //else
+            //{
+            //    MessageBox.Show($"Неверный ответ!\nПравильно: {_cards[i].Latin}\nПеревод: {_cards[i].Russian}\nТранскрипция: {_cards[i].Transcription}");
+            //}
+
+            InfoMessage inf = new InfoMessage(_cards[i], button);
+            inf.Show();
 
             i++;
             if (i == _cards.Count)
