@@ -63,16 +63,17 @@ namespace LatinPisces.Models
             
         //}
 
-        public List<String> GetWrongAnswers()
+        public Dictionary<String, String> GetWrongAnswers()
         {
 
-            List<String> wrongAnswers = new List<String>();
-            string wrongAnswer;
+            Dictionary<String, String> wrongAnswers = new Dictionary<string, string>();
+            string line;
 
             StreamReader streamReader = new StreamReader(PathToDictionary);
-            while ((wrongAnswer = streamReader.ReadLine()) != null)
+            while ((line = streamReader.ReadLine()) != null)
             {
-                wrongAnswers.Add(wrongAnswer);
+                string[] words = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                wrongAnswers.Add(words[0], words[1]);
             }
             
             return wrongAnswers;

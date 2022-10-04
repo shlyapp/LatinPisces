@@ -26,6 +26,7 @@ namespace LatinPisces.View
 
         private int i = 0;
         private List<Card> _cards;
+        private Dictionary<String, String> _wrongAnswers;
 
         public TestPage()
         {
@@ -33,6 +34,9 @@ namespace LatinPisces.View
 
             Random r = new Random();
             _cards = Data.GetCards().OrderBy(x => r.Next()).ToList();
+
+            isLatin.IsChecked = true;
+            isRussian.IsChecked = false;
 
             LoadTest();
         }
@@ -57,7 +61,8 @@ namespace LatinPisces.View
 
             if (button.Content ==_cards[i].Latin)
             {
-                MessageBox.Show("Верный ответ!");
+                button.Background = Brushes.Green;
+                
             }
             else
             {
@@ -72,22 +77,77 @@ namespace LatinPisces.View
             }
             else
             {
+                Thread.Sleep(500);
                 RefreshButtons();
             }
+
         }
 
         private void RefreshButtons()
         {
             CardImage.Source = BitmapFrame.Create(new Uri(_cards[i].Path));
-            QuestionText.Content = _cards[i].Latin;
 
-            List<string> asnwers = Logic.GetRandomAnswers(_cards[i]);
+            _wrongAnswers = Logic.GetRandomAnswers(_cards[i]);
             IEnumerable<Button> collection = grid.Children.OfType<Button>();
             int j = 0;
-            foreach (Button button in collection)
+            //foreach (Button button in collection)
+            //{
+            //    button.Content = _wrongAnswers.;
+            //    j++;
+            //}
+            foreach (var item in _wrongAnswers)
             {
-                button.Content = asnwers[j];
+                //collection.ElementAt(j).Content = item.Key;
+                Button btn = collection.ElementAt(j) as Button;
+                btn.Content = item.Key;
                 j++;
+            }
+        }
+
+        private void ChangeLanguage(object sender, RoutedEventArgs e)
+        {
+            CheckBox checkBox = sender as CheckBox;
+
+            IEnumerable<Button> collection = grid.Children.OfType<Button>();
+            
+
+            if (checkBox == isLatin)
+            {
+                isLatin.IsChecked = true;
+                isRussian.IsChecked = false;
+                int j = 0;
+
+                //foreach (Button button in collection)
+                //{
+                //    button.Content = _wrongAnswers.;
+                //    j++;
+                //}
+                foreach (var item in _wrongAnswers)
+                {
+                    //collection.ElementAt(j).Content = item.Key;
+                    Button btn = collection.ElementAt(j) as Button;
+                    btn.Content = item.Key;
+                    j++;
+                }
+            }
+            else
+            {
+                isRussian.IsChecked = true;
+                isLatin.IsChecked = false;
+                int j = 0;
+                //foreach (Button button in collection)
+                //{
+                //    button.Content = _wrongAnswers.;
+                //    j++;
+                //}
+                foreach (var item in _wrongAnswers)
+                {
+                    //collection.ElementAt(j).Content = item.Key;
+                    Button btn = collection.ElementAt(j) as Button;
+                    btn.Content = item.Value;
+                    j++;
+                }
+
             }
         }
     }

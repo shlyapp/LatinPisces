@@ -8,13 +8,14 @@ namespace LatinPisces.Models
 {
     internal static class Logic
     {
-        public static List<string> GetRandomAnswers(Card card)
+        public static Dictionary<String, String> GetRandomAnswers(Card card)
         {
             var random = new Random();
-            List<string> answers = card.GetWrongAnswers().OrderBy(s => random.Next()).Take(4).ToList();
-            answers.Add(card.Latin);
+            Random rand = new Random();
+            var shuffledDictionary = card.GetWrongAnswers().OrderBy(x => rand.Next()).Take(4).ToDictionary(item => item.Key, item => item.Value);
+            shuffledDictionary.Add(card.Latin, card.Russian);
 
-            return answers.OrderBy(s => random.Next()).Take(5).ToList();
+            return shuffledDictionary.OrderBy(x => rand.Next()).Take(5).ToDictionary(item => item.Key, item => item.Value);
         }
     }
 }

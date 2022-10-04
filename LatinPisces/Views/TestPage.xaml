@@ -10,13 +10,12 @@
 
     <Grid Background="White" Name="grid">
         <Image
-               Height="290"
-               Width="500"
+               Height="334"
                VerticalAlignment="Top"
-               Margin="125,10,125,0"
+               Margin="99,10,99,0"
                Name = "CardImage"
                />
-        
+
         <Button HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Margin="0, 80, 0, 0"
@@ -39,7 +38,7 @@
                 FontFamily="Bahnschrift SemiBold"
                 FontSize="30"
                 Click="GiveAnswer"/>
-       <Button HorizontalAlignment="Center"
+        <Button HorizontalAlignment="Center"
                 Margin="0,440,0,0"
                 Height="49"
                 Width="686"
@@ -53,18 +52,25 @@
                 FontFamily="Bahnschrift SemiBold"
                 FontSize="30"
                 Click="GiveAnswer"/>
-        <Label Name = "QuestionText"
-               FontFamily="Bahnschrift SemiBold"
-               FontSize="40"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"
-               Margin="0, 0, 0, 20"/>
-        <CheckBox Content="Показать транскрипцию"
-                  HorizontalAlignment="Center"
-                  Margin="0,0,0,0"
+        <CheckBox Content="Lat"
+                  Margin="500,630,0,0"
+                  Height="20"
+                  Width="60"
                   FontFamily="Bahnschrift SemiBold"
                   FontSize="20"
-                  VerticalAlignment="Bottom"
+                  Name = "isLatin"
+                  Click="ChangeLanguage"
+
+
+                    />
+        <CheckBox Content="Rus"
+                  Margin="650,630,0,0"
+                  Height="20"
+                  Width="60"
+                  FontFamily="Bahnschrift SemiBold"
+                  FontSize="20"
+                  Name="isRussian" Click="ChangeLanguage"
+                  
 
                     />
 
