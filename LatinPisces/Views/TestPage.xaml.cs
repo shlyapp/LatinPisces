@@ -31,6 +31,7 @@ namespace LatinPisces.View
         public TestPage()
         {
             InitializeComponent();
+            grid.Focus();
 
             Random r = new Random();
             _cards = Data.GetCards().OrderBy(x => r.Next()).ToList();

@@ -6,14 +6,14 @@
       xmlns:local="clr-namespace:LatinPisces.View"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="750"
-      Title="TestPage" KeyDown="Page_KeyDown">
+      Title="TestPage">
 
-    <Grid Background="White" Name="grid">
+    <Grid Background="White" Name="grid" KeyDown="Page_KeyDown">
         <Image
                Height="334"
                VerticalAlignment="Top"
                Margin="99,10,99,0"
-               Name = "CardImage"
+               Name = "CardImage" KeyDown="Page_KeyDown"
                />
 
         <Button HorizontalAlignment="Center"
