@@ -46,5 +46,10 @@ namespace LatinPisces.Views
         {
             NavigationService.GoBack();
         }
+
+        private void EditCard(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new EditCard(sender as Card));
+        }
     }
 }

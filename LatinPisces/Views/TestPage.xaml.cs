@@ -50,7 +50,7 @@ namespace LatinPisces.View
         {
             Button button = sender as Button;
 
-            if (button.Content == Data.GetCards()[i].Translation)
+            if (button.Content == Data.GetCards()[i].Latin)
             {
                 MessageBox.Show("Верный ответ!");
             }
@@ -74,7 +74,7 @@ namespace LatinPisces.View
         private void RefreshButtons()
         {
             CardImage.Source = BitmapFrame.Create(new Uri(Data.GetCards()[i].Path));
-            QuestionText.Content = Data.GetCards()[i].Name;
+            QuestionText.Content = Data.GetCards()[i].Latin;
 
             List<string> asnwers = Logic.GetRandomAnswers(Data.GetCards()[i]);
             IEnumerable<Button> collection = grid.Children.OfType<Button>();

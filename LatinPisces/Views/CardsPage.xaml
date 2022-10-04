@@ -49,7 +49,7 @@
                                 Source="/Resources/delete.png"
                                 />
                         <Image Grid.Column="2"
-                            
+                                MouseDown="EditCard"
                                 Width="50"
                                Height="50"
                                 Source="/Resources/edit.png"

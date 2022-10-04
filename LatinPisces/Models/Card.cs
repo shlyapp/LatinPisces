@@ -8,11 +8,11 @@ using System.IO;
 
 namespace LatinPisces.Models
 {
-    internal class Card
+    public class Card
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Translation { get; set; }
+        public string Latin { get; set; }
+        public string Russian { get; set; }
         public string Path { get; set; }
         public string Transcription { get; set; }
         public string PathToDictionary { get; set; }
@@ -21,10 +21,10 @@ namespace LatinPisces.Models
         //private List<String> _specialDictionary;
         private static string _pathToDefaultDictionry;
 
-        public Card(string name, string translation, string path, string transcription)
+        public Card(string latin, string russian, string path, string transcription)
         {
-            this.Name = name;
-            this.Translation = translation;
+            this.Latin = latin;
+            this.Russian = russian;
             this.Path = path;
             this.Transcription = transcription;
 

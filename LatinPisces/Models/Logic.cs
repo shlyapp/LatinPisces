@@ -12,7 +12,7 @@ namespace LatinPisces.Models
         {
             var random = new Random();
             List<string> answers = card.GetWrongAnswers().OrderBy(s => random.Next()).Take(4).ToList();
-            answers.Add(card.Translation);
+            answers.Add(card.Latin);
 
             return answers.OrderBy(s => random.Next()).Take(5).ToList();
         }
