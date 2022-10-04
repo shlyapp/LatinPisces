@@ -61,12 +61,11 @@ namespace LatinPisces.View
 
             if (button.Content ==_cards[i].Latin)
             {
-                button.Background = Brushes.Green;
-                
+                MessageBox.Show($"Верный ответ!\nТранскрипция: {_cards[i].Transcription}");
             }
             else
             {
-                MessageBox.Show("Неверный ответ!");
+                MessageBox.Show($"Неверный ответ!\nПравильно: {_cards[i].Latin}\nТранскрипция: {_cards[i].Transcription}");
             }
 
             i++;
@@ -77,10 +76,8 @@ namespace LatinPisces.View
             }
             else
             {
-                Thread.Sleep(500);
                 RefreshButtons();
             }
-
         }
 
         private void RefreshButtons()
@@ -90,11 +87,7 @@ namespace LatinPisces.View
             _wrongAnswers = Logic.GetRandomAnswers(_cards[i]);
             IEnumerable<Button> collection = grid.Children.OfType<Button>();
             int j = 0;
-            //foreach (Button button in collection)
-            //{
-            //    button.Content = _wrongAnswers.;
-            //    j++;
-            //}
+
             foreach (var item in _wrongAnswers)
             {
                 //collection.ElementAt(j).Content = item.Key;
@@ -116,12 +109,6 @@ namespace LatinPisces.View
                 isLatin.IsChecked = true;
                 isRussian.IsChecked = false;
                 int j = 0;
-
-                //foreach (Button button in collection)
-                //{
-                //    button.Content = _wrongAnswers.;
-                //    j++;
-                //}
                 foreach (var item in _wrongAnswers)
                 {
                     //collection.ElementAt(j).Content = item.Key;

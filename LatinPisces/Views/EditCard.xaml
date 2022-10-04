@@ -33,11 +33,12 @@
             FontFamily="Bahnschrift SemiBold"
             FontSize="50"
             VerticalAlignment="Top"/>
-        <Label Content="Транскрипция"
+        <Label Content="Транскрипция*"
             Margin="30,265,341,0"
             FontFamily="Bahnschrift SemiBold"
             FontSize="50"
-            VerticalAlignment="Top"/>
+            VerticalAlignment="Top"
+            ToolTip="Это поле можно не заполнять"/>
         <Label Content="Добавить изображение"
             Margin="30,340,140,0"
             FontFamily="Bahnschrift SemiBold"

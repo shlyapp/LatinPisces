@@ -34,7 +34,7 @@ namespace LatinPisces.Views
 
         private void AddCard(object sender, RoutedEventArgs e)
         {
-            if (NameTextBlock.Text != null && TranscriptionTextBlock.Text != null && _path != null && TranscriptionTextBlock.Text != null)
+            if (NameTextBlock.Text != null && TranslationTextBlock.Text != null && _path != null)
             {
 
                 Card card = new Card(NameTextBlock.Text, TranslationTextBlock.Text, _path, TranscriptionTextBlock.Text);
