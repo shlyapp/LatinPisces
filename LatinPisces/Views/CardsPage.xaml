@@ -33,7 +33,7 @@
                         
                         
                         <TextBlock Grid.Column="0"
-                            Text="{Binding Name}"
+                            Text="{Binding Latin}"
                                    HorizontalAlignment="Center"
                                        VerticalAlignment="Center"
                                    FontSize="40"

@@ -30,6 +30,12 @@ namespace LatinPisces.Views
         {
             InitializeComponent();
             _card = card;
+
+            LatinTextBlock.Text = _card.Latin;
+            RussianTextBlock.Text = _card.Russian;
+            TranscriptionTextBlock.Text = _card.Transcription;
+            _path = _card.Path;
+            _pathToDict = _card.PathToDictionary;
         }
 
         private void OpenFileDialog(object sender, MouseButtonEventArgs e)
@@ -56,7 +62,11 @@ namespace LatinPisces.Views
 
         private void CardChange(object sender, RoutedEventArgs e)
         {
-
+            Data.RemoveCard(_card);
+            Card newCard = new Card(LatinTextBlock.Text, RussianTextBlock.Text, _path, TranscriptionTextBlock.Text);
+            newCard.PathToDictionary = _pathToDict;
+            Data.AddCard(newCard);
+            NavigationService.GoBack();
         }
     }
 }

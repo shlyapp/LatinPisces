@@ -49,7 +49,10 @@ namespace LatinPisces.Views
 
         private void EditCard(object sender, MouseButtonEventArgs e)
         {
-            NavigationService.Navigate(new EditCard(sender as Card));
+            Image button = sender as Image;
+            Card card = button.DataContext as Card;
+            NavigationService.Navigate(new EditCard(card));
+            CardList.Items.Refresh();
         }
     }
 }

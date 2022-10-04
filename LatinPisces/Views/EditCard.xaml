@@ -24,7 +24,7 @@
                 Width="314"
                 Click="CardChange"/>
         <Label Content="Латынь"
-               Margin="30,125,453,0"
+               Margin="30,125,472,0"
                FontFamily="Bahnschrift SemiBold"
                FontSize="50"
                VerticalAlignment="Top"/>
@@ -51,7 +51,7 @@
                  TextAlignment="Center"
                  Width="452"
                  Height="46"
-                 Name="NameTextBlock"/>
+                 Name="LatinTextBlock"/>
         <TextBox Margin="390,277,0,0"
             FontFamily="Bahnschrift SemiBold"
             FontSize="30"
@@ -69,7 +69,7 @@
                  TextAlignment="Center"
                  Width="452"
                  Height="46"
-                 Name="TranslationTextBlock"/>
+                 Name="RussianTextBlock"/>
         <Image HorizontalAlignment="Left"
                Height="51"
                Margin="620,350,0,0"
