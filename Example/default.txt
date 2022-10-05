@@ -1,10 +1,10 @@
-anchovy-анчоус
-barracuda-барракуда
-bream-лещ
-burbot-налим
-carp-карп
-catfish-сом
-cisco-сиг
-chum salmon-кета
-cod-треска
-crucian carp-карась
+anchovy=анчоус
+barracuda=барракуда
+bream=лещ	
+burbot=налим
+carp=карп
+catfish=сом
+cisco=сиг
+chum salmon=кета
+cod=треска
+crucian carp=карась

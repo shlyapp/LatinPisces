@@ -72,7 +72,7 @@ namespace LatinPisces.Models
             StreamReader streamReader = new StreamReader(PathToDictionary);
             while ((line = streamReader.ReadLine()) != null)
             {
-                string[] words = line.Split(new char[] { '-' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] words = line.Split(new char[] { '=' }, StringSplitOptions.RemoveEmptyEntries);
                 wrongAnswers.Add(words[0], words[1]);
             }
             
