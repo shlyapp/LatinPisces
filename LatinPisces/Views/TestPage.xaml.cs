@@ -76,7 +76,8 @@ namespace LatinPisces.View
             i++;
             if (i == _cards.Count)
             {
-                MessageBox.Show("Все тесты пройдены!");
+                ResultWindow result = new ResultWindow();
+                result.Show();
                 NavigationService.GoBack();
             }
             else

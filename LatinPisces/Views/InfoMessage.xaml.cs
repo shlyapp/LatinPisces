@@ -1,4 +1,5 @@
 ﻿using LatinPisces.Models;
+using LatinPisces.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,11 +34,13 @@ namespace LatinPisces.Views
             {
                 statusLabel.Content = "Верный ответ!";
                 statusLabel.Foreground = Brushes.Green;
+                ResultWindow.rightAnswersCounter++;
             }
             else
             {
                 statusLabel.Content = "Неверный ответ!";
                 statusLabel.Foreground = Brushes.Red;
+                ResultWindow.notRightAnswersCounter++; ;
             }
         }
 
