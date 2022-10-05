@@ -25,10 +25,10 @@ namespace LatinPisces.Views
         {
             InitializeComponent();
 
-            yourAnswer.Content = button.Content;
-            rightAnswer.Content = card.Latin;
-            translationLabel.Content = card.Russian;
-            transcriptionLabel.Content = card.Transcription;
+            yourAnswer.Text = button.Content.ToString();
+            rightAnswer.Text = card.Latin;
+            translationLabel.Text = card.Russian;
+            transcriptionLabel.Text = card.Transcription;
 
             if (button.Content == card.Latin || button.Content == card.Russian)
             {

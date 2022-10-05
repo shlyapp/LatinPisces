@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LatinPisces.Views"
         mc:Ignorable="d"
-        Title="InfoMessage" Height="500" Width="500"
+        Title="InfoMessage" Height="600" Width="500"
         WindowStartupLocation='CenterScreen'
         ResizeMode="NoResize">
     <Grid>
@@ -31,64 +31,72 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Content="Выбранный ответ:"
+            Margin="0, -10, 0, 0"
             FontFamily="Bahnschrift SemiBold"
             FontSize="30"
             />
-        <Label
+        <TextBlock
             Grid.Row="1"
             Name="yourAnswer"
             HorizontalAlignment="Center"
             VerticalAlignment="Bottom"
             FontFamily="Bahnschrift SemiBold"
             FontSize="30"
+            TextWrapping="Wrap"
             />
         <Label
             Grid.Row="2"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
+            Margin="0, -10, 0, 0"
             Content="Правильный ответ:"
             FontFamily="Bahnschrift SemiBold"
             FontSize="30"
             />
-        <Label
+        <TextBlock
             Grid.Row="2"
             Name = "rightAnswer"
             HorizontalAlignment="Center"
             VerticalAlignment="Bottom"
             FontFamily="Bahnschrift SemiBold"
             FontSize="30"
+            TextWrapping="Wrap"
             />
         <Label
             Grid.Row="3"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Content="Перевод:"
+            Margin="0, -10, 0, 0"
             FontFamily="Bahnschrift SemiBold"
             FontSize="30"
             />
-        <Label
+        <TextBlock
             Grid.Row="3"
             Name = "translationLabel"
             HorizontalAlignment="Center"
             VerticalAlignment="Bottom"
             FontFamily="Bahnschrift SemiBold"
             FontSize="30"
+            TextWrapping="Wrap"
             />
         <Label
             Grid.Row="4"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Content="Транскрипция:"
+            Margin="0, -10, 0, 0"
             FontFamily="Bahnschrift SemiBold"
             FontSize="30"
             />
-        <Label
+        <TextBlock
             Grid.Row="4"
             Name = "transcriptionLabel"
             HorizontalAlignment="Center"
             VerticalAlignment="Bottom"
             FontFamily="Bahnschrift SemiBold"
             FontSize="30"
+            TextWrapping="Wrap"
             />
         <Button
             Grid.Row="5"
